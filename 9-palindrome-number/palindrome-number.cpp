@@ -1,17 +1,25 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        
-        if (x < 0) return false;
 
-        // Convert integer to string
-        string numStr = to_string(x);
+        int y = x;
+       string numStr = to_string(x);
 
-        // Create a reversed copy of the string
-        string numStr1 = numStr;
-        reverse(numStr1.begin(), numStr1.end());
+string  numStr1 = numStr;
 
-        // Check if the original and reversed strings are the same
-        return numStr1 == numStr;
+reverse(numStr1.begin(),numStr1.end());
+
+
+        bool result =  (numStr1 == numStr);
+
+            if (x < 0) {
+
+            return false;
+        }
+
+        else {
+
+            return result;
+        }
     }
 };
