@@ -19,29 +19,15 @@ if (isalpha(s[i])){
 
     }
  
-
-
-
- 
 if (isdigit(s[i])){
 
   
 
 temp = s[i];
     snew.push_back(temp);
-
-
-
-    }
+ }
  
 
-
-
-
-
-
-
- 
 
 }
 
