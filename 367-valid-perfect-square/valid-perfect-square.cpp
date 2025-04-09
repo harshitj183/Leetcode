@@ -1,7 +1,8 @@
 class Solution {
 public:
     bool isPerfectSquare(int num) {
-        int x = sqrt(num);  
-        return x * x == num;
+      auto x = sqrt(num);  
+         int  temp1 = x; 
+        return x  == temp1;
     }
 };
