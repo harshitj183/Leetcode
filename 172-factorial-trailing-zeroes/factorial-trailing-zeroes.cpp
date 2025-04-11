@@ -1,11 +1,11 @@
 class Solution {
 public:
     int trailingZeroes(int n) {
-        int cout = 0;
-         while(n>0){
+        int count = 0;
+        while(n>0){
             n/=5;
-                           cout+=n;
+            count+=n;
         }
-        return cout;
+        return count;
     }
 };
