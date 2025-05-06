@@ -1,16 +1,16 @@
 class Solution {
 public:
     int bitwiseComplement(int n) {
-        int ans=0, rem,  m=1;
+        int res=0, ll,  m=1;
         if(n==0) return 1;
         while(n!=0){  
-            rem = n%2;
-            rem = rem ^ 1 ;
+            ll = n%2;
+                        ll = ll ^ 1 ;
             n /= 2;
-            ans = ans + rem * m;
+            res = res + ll * m;
             m *= 2;
         }
-        return ans;
+        return res;
         
     }
 };
