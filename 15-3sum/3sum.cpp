@@ -24,42 +24,21 @@ if (sum ==0)
   left++;
                 right--;
 }
-
-
-
+ 
 else if (sum < 0) {
                 left++;
             } 
             else {
                 right--;
             }
-
-
-
-
-
-
-
+ 
 }
 
-
-
-
-
-
-
-
-
-
-
+ 
 
  }
-
-
-
+ 
    return sol;
-
-
-
+ 
     }
 };
