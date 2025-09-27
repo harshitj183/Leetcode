@@ -7,31 +7,49 @@
  *     ListNode(int x) : val(x), next(nullptr) {}
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
- */class Solution {
+ */
+class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* dummyHead = new ListNode(0);   
-        ListNode* curr = dummyHead;
+        ListNode* current1 = l1;
+        ListNode* current2 = l2;
+        ListNode* lind2 = NULL;   // result list ka head
+        ListNode* tail = NULL;    // tail pointer
+        int s = 0;
         int carry = 0;
 
-        while (l1 != nullptr || l2 != nullptr || carry) {
-            int sum = carry;
-            
-            if (l1 != nullptr) {
-                sum += l1->val;
-                l1 = l1->next;
+        while (current1 != NULL || current2 != NULL || carry != 0) {
+
+            s = carry;
+
+            if (current1 != NULL) {
+                s += current1->val;
+                current1 = current1->next;
             }
 
-            if (l2 != nullptr) {
-                sum += l2->val;
-                l2 = l2->next;
+            if (current2 != NULL) {
+                s += current2->val;
+                current2 = current2->next;
             }
 
-            carry = sum / 10;
-            curr->next = new ListNode(sum % 10);
-            curr = curr->next;
+            if (s <= 9) {
+                carry = 0;
+            } else {
+                carry = 1;
+                s = s - 10;
+            }
+
+            ListNode* newNode = new ListNode(s);
+
+            if (lind2 == NULL) {
+                lind2 = newNode;
+                tail = newNode;
+            } else {
+                tail->next = newNode;
+                tail = newNode;
+            }
         }
 
-        return dummyHead->next;   
+        return lind2;
     }
 };
