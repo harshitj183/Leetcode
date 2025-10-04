@@ -13,8 +13,8 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* current1 = l1;
         ListNode* current2 = l2;
-        ListNode* lind2 = NULL;   // result list ka head
-        ListNode* tail = NULL;    // tail pointer
+        ListNode* lind2 = NULL;    
+        ListNode* tail = NULL;   
         int s = 0;
         int carry = 0;
 
