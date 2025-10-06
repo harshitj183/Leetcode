@@ -18,13 +18,24 @@ public:
         }
     }
 
+
+
+
+
+
+
     // Check columns
     for (int j = 0; j < 9; j++) {
         unordered_set<char> colSet;
         for (int i = 0; i < 9; i++) {
             char c = board[i][j];
             if (c != '.') {
-                if (colSet.count(c)) return false; // duplicate mila
+                if (colSet.count(c)) return false;
+            
+
+
+
+
                 colSet.insert(c);
             }
         }
@@ -44,7 +55,9 @@ public:
             }
         }
     }
-    return true; // agar sab sahi hai
+    return true;
+    
+    // agar ye hame shi lage to hai 
 
 
 
