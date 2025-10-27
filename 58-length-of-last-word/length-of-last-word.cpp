@@ -18,6 +18,8 @@ public:
 
 
 
+
+
                        while (i >= 0 && s[i] != ' ') {
             length++;
             i--;
