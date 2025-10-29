@@ -1,1 +1,1 @@
-<h2>jump-game Notes</h2><hr>[ Time taken: 15 m 59 s ]
+<h2>jump-game Notes</h2><hr>[ Time taken: 6 d 0 hrs 39 m 57 s ]
