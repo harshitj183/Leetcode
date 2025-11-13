@@ -1,9 +1,9 @@
 class Solution {
 public:
-    bool isSymmetric(TreeNode* root) {
-
-
-        if (root == nullptr)  return true;
+    bool isSymmetric(TreeNode  *root) {
+ 
+ 
+       if (root == nullptr)  return true;
 
         return mirror(root->left,root->right);
 
@@ -13,6 +13,8 @@ public:
 
 
 
+
+ ;
 private :
     
     bool  mirror(TreeNode *left ,TreeNode *right ){
