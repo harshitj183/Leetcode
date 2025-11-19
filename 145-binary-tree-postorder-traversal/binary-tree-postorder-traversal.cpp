@@ -22,9 +22,9 @@ public:
 private:
     void preorder(TreeNode* node, vector<int>& result) {
         if (!node) return;
-        result.push_back(node->val);      // Visit root
-        preorder(node->right, result);     // Visit left
-        preorder(node->left, result);    // Visit right
+        result.push_back(node->val);      
+        preorder(node->right, result);    
+        preorder(node->left, result);   
     }
     
 };
