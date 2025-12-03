@@ -3,8 +3,7 @@ class Solution {
 public:
     void dfs(vector<vector<int>>& image, int r, int c, int orig, int color) {
         int m = image.size(), n = image[0].size();
-vector<int> v;
-v.reserve(n);
+ 
 
         // Out of bounds
         if (r < 0 || r >= m || c < 0 || c >= n)
