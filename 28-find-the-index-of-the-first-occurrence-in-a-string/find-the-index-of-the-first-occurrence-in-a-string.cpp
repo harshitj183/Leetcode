@@ -16,10 +16,15 @@ public:
                     return i - n + 1;
                 }
             } else {
-                i = i - j;   // important fix
+                i = i - j;   
                 j = 0;
             }
         }
         return -1;
     }
 };
+
+
+
+
+ 
