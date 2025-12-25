@@ -5,7 +5,7 @@ public:
         int s = strs.size();
         if (s == 0) return "";
 
-        string res = "";
+        string res ;
         bool res1 = true;
         int j = 0;
 
