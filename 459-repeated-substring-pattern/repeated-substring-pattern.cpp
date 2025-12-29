@@ -1,16 +1,16 @@
 class Solution {
 public:
     bool repeatedSubstringPattern(string s) {
-        int n = s.size();
+        int l = s.size();
 
-        for (int i = 1; i <= n / 2; i++) {
+        for (int i = 1; i <= l / 2; i++) {
 
-            if (n % i == 0) {
+            if (l % i == 0) {
 
                 string pattern = s.substr(0, i);
                 string temp = "";
 
-                for (int j = 0; j < n / i; j++) {
+                for (int k = 0; k < l / i; k++) {
                     temp += pattern;
                 }
 
