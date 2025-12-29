@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<string> res;
+ vector<string> res;
 
     bool isValid(string str) {
         vector<int> check;
@@ -21,7 +21,7 @@ public:
         return (check.size() == 0);
     }
 
-    void solve(string &curr, int n) {
+    void solve(string& curr, int n) {
         if (curr.size() == 2 * n) {
             if (isValid(curr)) {
                 res.push_back(curr);
@@ -39,6 +39,7 @@ public:
     }
 
     vector<string> generateParenthesis(int n) {
+ 
         string cur;
         solve(cur, n);
         return res;
