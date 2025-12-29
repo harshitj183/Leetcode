@@ -21,8 +21,8 @@ public:
         return (check.size() == 0);
     }
 
-    void solve(string& curr, int n) {
-        if (curr.size() == 2 * n) {
+    void solve(string &curr, int m) {
+        if (curr.size() == 2 * m) {
             if (isValid(curr)) {
                 res.push_back(curr);
             }
@@ -30,11 +30,11 @@ public:
         }
 
         curr.push_back('(');
-        solve(curr, n);
+        solve(curr, m);
         curr.pop_back();
 
         curr.push_back(')');
-        solve(curr, n);
+        solve(curr, m);
         curr.pop_back();
     }
 
