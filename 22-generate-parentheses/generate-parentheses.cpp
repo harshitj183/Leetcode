@@ -1,28 +1,46 @@
 class Solution {
-private:
-    void func(vector<string>& res, string& ans, int open, int close) {
-        if(!open && !close) {
-            res.push_back(ans);
+public:
+    vector<string> res;
+
+    bool isValid(string str) {
+        vector<int> check;
+        int s = str.size();
+
+        for (int i = 0; i < s; i++) {
+            if (str[i] == '(') {
+                check.push_back(1);
+            }
+            if (str[i] == ')') {
+                if (check.size() > 0 && check[check.size() - 1] == 1) {
+                    check.pop_back();
+                } else {
+                    check.push_back(-1);
+                }
+            }
+        }
+        return (check.size() == 0);
+    }
+
+    void solve(string &curr, int n) {
+        if (curr.size() == 2 * n) {
+            if (isValid(curr)) {
+                res.push_back(curr);
+            }
             return;
         }
 
-        if(open) {
-            ans.push_back('(');
-            func(res, ans, open-1, close);
-            ans.pop_back();
-        }
+        curr.push_back('(');
+        solve(curr, n);
+        curr.pop_back();
 
-        if(close && open < close) {
-            ans.push_back(')');
-            func(res, ans, open, close-1);
-            ans.pop_back();
-        }
+        curr.push_back(')');
+        solve(curr, n);
+        curr.pop_back();
     }
-public:
+
     vector<string> generateParenthesis(int n) {
-        vector<string> ans;
-        string str = "";
-        func(ans, str, n, n);
-        return ans;
+        string cur;
+        solve(cur, n);
+        return res;
     }
 };
