@@ -8,7 +8,7 @@ public:
             int mid = low + (high - low) / 2;
 
             if (nums[mid] == target) {
-                return mid;  // return index
+                return mid;  
             }
             else if (nums[mid] < target) {
                 low = mid + 1;
