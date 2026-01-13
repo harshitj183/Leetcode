@@ -17,21 +17,12 @@ else{
 return binarysearcch( nums,target,low,mid-1);
 }
 
-}
-      
-
-    int search(vector<int>& nums, int target) {
+}   int search(vector<int>& nums, int target) {
       
 int low = 0;
 int high = nums.size()-1;
- 
-
       return binarysearcch(nums,target,low,high);
-
-
-
  
-
 
     }
 };
