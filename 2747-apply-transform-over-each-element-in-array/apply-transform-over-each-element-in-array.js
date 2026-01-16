@@ -8,7 +8,7 @@ var map = function (arr, fn) {
 let pls;
     for (let i in arr){
 
-pls = fn(arr[Number(i)],Number(i));
+pls = fn(arr[+(i)],+(i));
 
 
 res.push(pls);
