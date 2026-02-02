@@ -1,7 +1,7 @@
 class Solution {
 public:
  
-void solve(vector<int> &nums,int idx,vector <int> temp,    vector<vector<int>> &res ){
+void solve(vector<int> nums,int idx,vector <int> temp,    vector<vector<int>> &res ){
   res.push_back(temp);
 
   
