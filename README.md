@@ -271,3 +271,10 @@ This repository exists to:
 **⭐ Star this repo if it helps you in your coding journey!**
 
 </div>
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## String
+|  |
+| ------- |
+| [0006-zigzag-conversion](https://github.com/harshitj183/Leetcode/tree/master/0006-zigzag-conversion) |
+<!---LeetCode Topics End-->
