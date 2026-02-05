@@ -1,7 +1,5 @@
 # 🚀 Leetcode DSA Practice – Harshit Jaiswal
 
-# 🚀 Leetcode DSA Practice – Harshit Jaiswal
-
 Welcome to my personal collection of LeetCode problem solutions, written in **C++** and **JavaScript**, auto-synced using [LeetHub](https://github.com/QasimWani/LeetHub).
 
 I'm on a mission to improve my problem-solving skills, and this repository is a reflection of my daily commitment to DSA 🚀.
