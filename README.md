@@ -1,24 +1,22 @@
 # 🚀 Leetcode DSA Practice – Harshit Jaiswal
 
-Welcome to my personal collection of LeetCode problem solutions, written in **C++** and auto-synced using [LeetHub](https://github.com/QasimWani/LeetHub).
+# 🚀 Leetcode DSA Practice – Harshit Jaiswal
+
+Welcome to my personal collection of LeetCode problem solutions, written in **C++** and **JavaScript**, auto-synced using [LeetHub](https://github.com/QasimWani/LeetHub).
 
 I'm on a mission to improve my problem-solving skills, and this repository is a reflection of my daily commitment to DSA 🚀.
 
-## 📊 Progress Statistics
-
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-75-brightgreen)
-![Easy](https://img.shields.io/badge/Easy-59-green)
-![Medium](https://img.shields.io/badge/Medium-16-orange)
-![Hard](https://img.shields.io/badge/Hard-0-red)
+ 
 
 | Difficulty | Count | Percentage |
 |------------|-------|------------|
-| 🟢 Easy    | 59    | 78.7%      |
-| 🟡 Medium  | 16    | 21.3%      |
+| 🟢 Easy    | 115   | ~79.3%     |
+| 🟡 Medium  | 30    | ~20.7%     |
 | 🔴 Hard    | 0     | 0%         |
-| **Total**  | **75**| **100%**   |
+| **Total** | **145**| **100%** |
 
 ---
+  
 
 ## 📋 Table of Contents
 
