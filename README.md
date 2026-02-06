@@ -273,4 +273,12 @@ This repository exists to:
 |  |
 | ------- |
 | [0006-zigzag-conversion](https://github.com/harshitj183/Leetcode/tree/master/0006-zigzag-conversion) |
+## Array
+|  |
+| ------- |
+| [0051-n-queens](https://github.com/harshitj183/Leetcode/tree/master/0051-n-queens) |
+## Backtracking
+|  |
+| ------- |
+| [0051-n-queens](https://github.com/harshitj183/Leetcode/tree/master/0051-n-queens) |
 <!---LeetCode Topics End-->
