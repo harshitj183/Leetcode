@@ -281,4 +281,16 @@ This repository exists to:
 |  |
 | ------- |
 | [0051-n-queens](https://github.com/harshitj183/Leetcode/tree/master/0051-n-queens) |
+## Math
+|  |
+| ------- |
+| [2396-strictly-palindromic-number](https://github.com/harshitj183/Leetcode/tree/master/2396-strictly-palindromic-number) |
+## Two Pointers
+|  |
+| ------- |
+| [2396-strictly-palindromic-number](https://github.com/harshitj183/Leetcode/tree/master/2396-strictly-palindromic-number) |
+## Brainteaser
+|  |
+| ------- |
+| [2396-strictly-palindromic-number](https://github.com/harshitj183/Leetcode/tree/master/2396-strictly-palindromic-number) |
 <!---LeetCode Topics End-->
