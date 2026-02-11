@@ -1,28 +1,45 @@
 class Solution {
 public:
+
+bool isValid(int n){
+
+    int original = n;
+
+    while (n > 0){
+
+        int digit = n % 10;   // last digit
+
+        if (digit == 0)       // cannot divide by 0
+            return false;
+
+        if (original % digit != 0)
+            return false;
+
+        n /= 10;              // remove last digit
+    }
+
+    return true;
+}
+
+
     vector<int> selfDividingNumbers(int left, int right) {
-        vector<int> result;
+vector <int>  res;
 
-        for (int i = left; i <= right; ++i) {
-            int num = i;
-            bool isSelfDividing = true;
 
-            while (num > 0) {
-                int digit = num % 10;
- 
-                if (digit == 0 || i % digit != 0) {
-                    isSelfDividing = false;
-                    break;
-                }
+for ( int i  = left ;  i <= right ;i++){
 
-                num /= 10;
-            }
 
-            if (isSelfDividing) {
-                result.push_back(i);
-            }
-        }
+if ( isValid(i)){
 
-        return result;
+
+    res.push_back(i);
+}
+
+
+}
+
+
+
+   return res;     
     }
 };
