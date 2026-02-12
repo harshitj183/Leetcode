@@ -1,18 +1,17 @@
-#include <string>
-
-
 class Solution {
 public:
     int addDigits(int num) {
-int sum = 0;
+ 
+        if (num < 10)
+            return num;
 
-if (num < 10) return num; 
- string str = to_string(num);
- for (char i : str){
-       sum += (i - '0');  
- }
+        int sum = 0;
 
-return addDigits(sum);
-        
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+
+        return addDigits(sum);
     }
 };
