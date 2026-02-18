@@ -1,1 +1,1 @@
-<h2>employees-earning-more-than-their-managers Notes</h2><hr>[ Time taken: 21 hrs 42 m 44 s ]
+<h2>employees-earning-more-than-their-managers Notes</h2><hr>[ Time taken: 9 hrs 41 m 54 s ]
