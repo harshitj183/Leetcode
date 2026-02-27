@@ -8,10 +8,10 @@ I'm on a mission to improve my problem-solving skills, and this repository is a 
 
 | Difficulty | Count | Percentage |
 |------------|-------|------------|
-| 🟢 Easy    | 115   | ~79.3%     |
-| 🟡 Medium  | 30    | ~20.7%     |
-| 🔴 Hard    | 0     | 0%         |
-| **Total** | **145**| **100%** |
+| 🟢 Easy    | 175   | ~79.3%     |
+| 🟡 Medium  | 60    | ~20.7%     |
+| 🔴 Hard    | 8     | 0%         |
+| **Total** | **245**| **100%** |
 
 ---
   
