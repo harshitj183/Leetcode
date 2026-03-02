@@ -1,7 +1,8 @@
 class Solution {
  
  
-public:
+public:    
+
     vector<int>     twoSum(vector<int>& nums, int target) {
 
 vector <int> res;
@@ -15,12 +16,7 @@ for (int j=0 ; j< l; j++){
      
 
 
-
-
-
-
-   
-       
+ 
 
             res.push_back(j);
 
