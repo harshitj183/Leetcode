@@ -5,9 +5,6 @@ public:
             for (int num : nums) {
             freq[num]++;
         }
-         
-
-         
         vector<int> values;
         for (auto &p : freq) {
             values.push_back(p.first);
