@@ -2,12 +2,11 @@ class Solution {
 public:
     vector<int> minDistinctFreqPair(vector<int>& nums) {
         unordered_map<int, int> freq;
-        
-      
-      
-        for (int num : nums) {
+            for (int num : nums) {
             freq[num]++;
         }
+         
+
          
         vector<int> values;
         for (auto &p : freq) {
