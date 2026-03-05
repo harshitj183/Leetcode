@@ -8,6 +8,7 @@ public:
         }
         
         
+        
         for (int i = start; i < nums.size(); ++i) {
                   swap(nums[start], nums[i]);  
             generatePermutations(nums, start + 1, result);  
