@@ -32,7 +32,7 @@ I'm on a mission to master Data Structures and Algorithms through consistent dai
 
 ### Click the card to view your detailed LeetCode stats!
 
-[![Leetcode Stats]([https://leetcard.jacoblin.cool/harshitj183?theme=chartreuse&font=EB%20Garamond&ext=heatmap](https://leetcard.jacoblin.cool/harshitj183?theme=chartreuse&font=EB%20Garamond&ext=heatmap
+[![Leetcode Stats]([https://leetcard.jacoblin.cool/harshitj183?theme=chartreuse&font=EB%20Garamond&ext=heat](https://leetcard.jacoblin.cool/harshitj183?theme=chartreuse&font=EB%20Garamond&ext=heat
 )](https://leetcode.com/harshitj183)
 > **Stats Update:** Real-time data from LeetCode API - Updates automatically
 
