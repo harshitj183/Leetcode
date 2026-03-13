@@ -1,0 +1,57 @@
+name: Update LeetCode Stats
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch LeetCode Stats
+        id: leetcode
+        run: |
+          STATS=$(curl -s https://leetcode-stats-api.herokuapp.com/harshitj183)
+          echo "$STATS" > /tmp/stats.json
+          TOTAL=$(echo $STATS | jq '.totalSolved')
+          EASY=$(echo $STATS | jq '.easySolved')
+          MEDIUM=$(echo $STATS | jq '.mediumSolved')
+          HARD=$(echo $STATS | jq '.hardSolved')
+          RANK=$(echo $STATS | jq '.ranking')
+          echo "total=$TOTAL" >> $GITHUB_OUTPUT
+          echo "easy=$EASY" >> $GITHUB_OUTPUT
+          echo "medium=$MEDIUM" >> $GITHUB_OUTPUT
+          echo "hard=$HARD" >> $GITHUB_OUTPUT
+          echo "rank=$RANK" >> $GITHUB_OUTPUT
+
+      - name: Update README
+        run: |
+          TOTAL=${{ steps.leetcode.outputs.total }}
+          EASY=${{ steps.leetcode.outputs.easy }}
+          MEDIUM=${{ steps.leetcode.outputs.medium }}
+          HARD=${{ steps.leetcode.outputs.hard }}
+          RANK=${{ steps.leetcode.outputs.rank }}
+          
+          # Calculate total questions (approximate)
+          TOTAL_QUESTIONS=$((EASY*5 + MEDIUM*4 + HARD*3))
+          EASY_PERCENT=$(echo "scale=1; ($EASY / 930) * 100" | bc 2>/dev/null || echo "79.3")
+          MEDIUM_PERCENT=$(echo "scale=1; ($MEDIUM / 2022) * 100" | bc 2>/dev/null || echo "20.7")
+          
+          # Update badges in README
+          sed -i "s/245.*Solved/${TOTAL} Solved/g" README.md
+          sed -i "s/~79.3%/${EASY_PERCENT}%/g" README.md
+          sed -i "s/~20.7%/${MEDIUM_PERCENT}%/g" README.md
+          sed -i "s/^175.*Easy.*/$EASY/g" README.md || echo "Stats will update on next workflow"
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "chore: Update LeetCode stats" || echo "No changes to commit"
+          git push || true
