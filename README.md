@@ -17,7 +17,7 @@
 
 ## 📋 About This Repository
 
-Welcome to my personal coding journey! This repository contains **245+ LeetCode problem solutions** written in **C++** and **JavaScript**, auto-synced using [LeetHub](https://github.com/QasimWani/LeetHub).
+Welcome to my personal coding journey! This repository contains **245+ LeetCode problem solutions** written in **C++** and **JavaScript**.
 
 I'm on a mission to master Data Structures and Algorithms through consistent daily practice. Each solution is carefully documented with:
 - 💎 Optimized implementations
