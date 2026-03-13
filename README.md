@@ -27,6 +27,16 @@ I'm on a mission to master Data Structures and Algorithms through consistent dai
 
 ---
 
+
+## 🚀 Live LeetCode Stats
+
+### Click the card to view your detailed LeetCode stats!
+
+[![Leetcode Stats](https://leetcard.jacoblin.cool/harshitj183)](https://leetcode.com/harshitj183)
+
+> **Stats Update:** Real-time data from LeetCode API - Updates automatically
+
+
 ## 📊 Progress Statistics
 
 | Difficulty | Count | Percentage | Status |
