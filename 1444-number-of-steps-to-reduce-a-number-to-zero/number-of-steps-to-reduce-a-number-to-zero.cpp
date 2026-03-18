@@ -1,7 +1,6 @@
 class Solution {
 public:
     int numberOfSteps(int num) {
-        
 
         int count =0 ;
         
