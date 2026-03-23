@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/harshitj183/Leetcode?style=flat-square&logo=github)](https://github.com/harshitj183/Leetcode)
 [![GitHub forks](https://img.shields.io/github/forks/harshitj183/Leetcode?style=flat-square&logo=github)](https://github.com/harshitj183/Leetcode)
 [![GitHub followers](https://img.shields.io/github/followers/harshitj183?style=flat-square&logo=github)](https://github.com/harshitj183)
-[![LeetCode Status](https://img.shields.io/badge/LeetCode-245%20Solved-FFA500?style=flat-square&logo=leetcode)](https://leetcode.com/harshitj183)
+[![LeetCode Status](https://img.shields.io/badge/LeetCode-254 Solved-FFA500?style=flat-square&logo=leetcode)](https://leetcode.com/harshitj183)
 
 **A comprehensive collection of LeetCode problem solutions** to master Data Structures and Algorithms
 
@@ -40,8 +40,8 @@ I'm on a mission to master Data Structures and Algorithms through consistent dai
 
 | Difficulty | Count | Percentage | Status |
 |:----------:|:-----:|:----------:|:------:|
-| 🟢 Easy | **175** | ~79.3% | ✅ |
-| 🟡 Medium | **60** | ~20.7% | ✅ |
+| 🟢 Easy | **175** | 10.0% | ✅ |
+| 🟡 Medium | **60** | 0% | ✅ |
 | 🟠 Hard | **8** | ~3.3% | 🚧 |
 | **Total** | **245** | **100%** | ✅ |
 
