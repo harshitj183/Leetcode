@@ -1,24 +1,35 @@
 class Solution {
 public:
-    void generatePermutations(vector<int>& nums, int start, vector<vector<int>>& result) {
-         
-        if (start == nums.size()) {
-                             result.push_back(nums);
-                                     return;
-        }
-        
-        
-        
-        for (int i = start; i < nums.size(); ++i) {
-                  swap(nums[start], nums[i]);  
-            generatePermutations(nums, start + 1, result);  
-                        swap(nums[start], nums[i]);  
-        }
+
+void solve(vector<int> &nums, vector<vector<int>> &res, vector<int> &temp, vector<bool> &vis) {
+
+    if (temp.size() == nums.size()) {
+        res.push_back(temp);
+     
     }
-    
-    vector<vector<int>> permute(vector<int>& nums) {
-                                    vector<vector<int>> result;
-        generatePermutations(nums, 0, result);
-                                  return result;
-    }         
+
+    for (int i = 0; i < nums.size(); i++) {
+
+        if (vis[i]) continue;  // already used
+
+        vis[i] = true;
+        temp.push_back(nums[i]);
+
+        solve(nums, res, temp, vis);
+
+        temp.pop_back();
+        vis[i] = false;
+    }
+}
+
+vector<vector<int>> permute(vector<int>& nums) {
+
+    vector<vector<int>> res;
+    vector<int> temp;
+    vector<bool> vis(nums.size(), false);
+
+    solve(nums, res, temp, vis);
+
+    return res;
+}
 };
