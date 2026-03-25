@@ -8,8 +8,12 @@ public:
             vector<int> temp(i, 1);
 
             if (i >= 3) {
+
+               
+
                 for (int j = 1; j < i - 1; j++) {
-                    temp[j] = res[i - 2][j - 1] + res[i - 2][j];
+
+                    temp[j] = res[i-2][j-1] + res[i-2][j];
                 }
             }
 
@@ -19,3 +23,4 @@ public:
         return res;
     }
 };
+ 
