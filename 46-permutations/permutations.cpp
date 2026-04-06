@@ -1,35 +1,37 @@
 class Solution {
 public:
-
-void solve(vector<int> &nums, vector<vector<int>> &res, vector<int> &temp, vector<bool> &vis) {
-
-    if (temp.size() == nums.size()) {
-        res.push_back(temp);
-     
-    }
-
-    for (int i = 0; i < nums.size(); i++) {
-
-        if (vis[i]) continue;  // already used
-
-        vis[i] = true;
-        temp.push_back(nums[i]);
-
-        solve(nums, res, temp, vis);
-
-        temp.pop_back();
-        vis[i] = false;
-    }
+     void solve(int idx, vector<int> & arr,vector <vector <int> >  & res ){
+if( idx >= arr.size()){
+res.push_back(arr);
+  
+    return ;
 }
 
-vector<vector<int>> permute(vector<int>& nums) {
+for (int i =idx; i< arr.size(); i++){
 
-    vector<vector<int>> res;
-    vector<int> temp;
-    vector<bool> vis(nums.size(), false);
+swap(arr[idx],arr[i]);
+solve(idx+1,arr,res);
+swap(arr[idx], arr[i]);
 
-    solve(nums, res, temp, vis);
-
-    return res;
 }
+ 
+
+
+
+     }
+
+    vector<vector<int>> permute(vector<int>& arr) {
+vector <vector <int> > res;
+
+
+
+solve(0,arr,res);
+
+
+
+
+
+
+      return res; 
+    }
 };
