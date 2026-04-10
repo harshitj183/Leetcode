@@ -22,6 +22,8 @@ swap(arr[idx], arr[i]);
 
     vector<vector<int>> permute(vector<int>& arr) {
 vector <vector <int> > res;
+ 
+
 
 
 
