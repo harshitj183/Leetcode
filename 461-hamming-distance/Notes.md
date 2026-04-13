@@ -1,1 +1,1 @@
-<h2>hamming-distance Notes</h2><hr>[ Time taken: 11m 49s ]
+<h2>hamming-distance Notes</h2><hr>[ Time taken: 20s ]
