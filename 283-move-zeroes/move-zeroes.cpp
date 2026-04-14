@@ -3,16 +3,16 @@ public:
     void moveZeroes(vector<int>& nums) {
 
         int left = 0;
-        int right = 0;   
+        int right = 0;   // 🔧 change (1)
 
-        while (right < nums.size()) {    
+        while (right < nums.size()) {   // 🔧 change (2)
 
-            if (nums[right] != 0) {      
+            if (nums[right] != 0) {     // 🔧 change (3)
                 swap(nums[left], nums[right]);
-                left++;             
+                left++;                // 🔧 change (4)
             }
 
-            right++;                    
+            right++;                   // 🔧 change (5)
         }
     }
 };
