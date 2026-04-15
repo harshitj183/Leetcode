@@ -10,7 +10,6 @@ public:
             nums[i] = nums[i] * nums[i];
               
            
-           
 
 
 
