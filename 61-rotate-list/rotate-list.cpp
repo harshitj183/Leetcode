@@ -1,35 +1,32 @@
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
-        // Edge cases
         if (!head || !head->next || k == 0) return head;
 
-        // Step 1: Find length and tail
-        int n = 1;
-        ListNode* tail = head;
-        while (tail->next) {
-            tail = tail->next;
+        // get length
+        int n = 0;
+        ListNode* temp = head;
+        while (temp) {
             n++;
+            temp = temp->next;
         }
 
-        // Step 2: Effective rotation
         k = k % n;
-        if (k == 0) return head;
 
-        // Step 3: Find new tail: (n - k - 1)th node
-        int stepsToNewTail = n - k - 1;
-        ListNode* newTail = head;
-        for (int i = 0; i < stepsToNewTail; i++) {
-            newTail = newTail->next;
+        while (k--) {
+            ListNode* curr = head;
+            ListNode* prev = nullptr;
+
+            while (curr->next != nullptr) {
+                prev = curr;
+                curr = curr->next;
+            }
+
+            prev->next = nullptr;
+            curr->next = head;
+            head = curr;
         }
 
-        // Step 4: New head is next of newTail
-        ListNode* newHead = newTail->next;
-
-        // Step 5: Break and connect
-        newTail->next = nullptr;
-        tail->next = head;
-
-        return newHead;
+        return head;
     }
 };
