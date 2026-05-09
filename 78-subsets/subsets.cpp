@@ -1,30 +1,38 @@
 class Solution {
 public:
-
-void solve(vector<int>& nums,int idx,vector <int> &temp,
-vector <vector <int>> &res){
-
-res.push_back(temp);
-
-for (int i= idx ;i< nums.size(); i++){
-
-    temp.push_back(nums[i]);
-   solve(nums,++idx,temp,res);
-   temp.pop_back();
-
-}
-
-
-}
     vector<vector<int>> subsets(vector<int>& nums) {
+        
+int s = nums.size();
+
 
 vector <vector <int>> res;
- vector <int> temp;
 
- solve(nums,0,temp,res);
+    int total = 1 << s;
+
+    for (int i = 0; i < total; i++) {
+        string temp = bitset<32>(i).to_string().substr(32 - s) ;
+   vector <int >restemp;
+        for(int j = 0 ; j< s;j++){
+
+        if(temp[j] == '1'){
+restemp.push_back(nums[j]);
+
+        }
+        }
+
+
+        res.push_back(restemp);
+    }
+
+
+
+
+
+
 
 
 return res;
+
 
 
     }
