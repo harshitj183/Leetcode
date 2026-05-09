@@ -5,7 +5,7 @@ public:
 
 int count =0;
 
-   
+   //Smaller ending = better choice
        if(intervals.empty()) return 0;
 
         sort(intervals.begin(), intervals.end(),
