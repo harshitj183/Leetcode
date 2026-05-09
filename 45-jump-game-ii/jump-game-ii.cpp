@@ -9,7 +9,6 @@ public:
 
             int temp = nums[crr];
 
-            // agar direct last index tak pahuch sakte ho
             if (crr + temp >= nums.size() - 1) {
                 count++;
                 break;
