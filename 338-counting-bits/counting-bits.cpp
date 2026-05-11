@@ -2,19 +2,34 @@ class Solution {
 public:
     vector<int> countBits(int n) {
 
-    vector <int> ans;
 
-     
-        
-          for( int i =0 ; i <=  n ;i++ ){
-     
-        bitset<32>  bits(i);
+vector <int> arr;
 
- ans.push_back(bits.count());
-          }
+for(int i =0;i<=n;i++){
+int num = i;
 
-return ans;
 
+int count =0;
+while(num){
+
+
+if(num & 1)
+    count++;
+num = num>>1;
+
+
+
+
+
+}
+
+arr.push_back(count);
+
+
+
+
+}
+
+    return arr;    
     }
 };
-
