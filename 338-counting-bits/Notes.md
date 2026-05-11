@@ -1,1 +1,1 @@
-<h2>counting-bits Notes</h2><hr>[ Time taken: 36m 35s ]
+<h2>counting-bits Notes</h2><hr>[ Time taken: 1hr 40m 24s ]
