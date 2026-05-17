@@ -1,25 +1,16 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
+        
+        if (x <0) return false;
+        int org =x;
+   long long n;     
+          while(x > 0) {
+        n = n * 10 + x % 10;
+        x = x / 10;
+    }
 
-        int y = x;
-       string numStr = to_string(x);
-
-string  numStr1 = numStr;
-
-reverse(numStr1.begin(),numStr1.end());
-
-
-        bool result =  (numStr1 == numStr);
-
-            if (x < 0) {
-
-            return false;
-        }
-
-        else {
-
-            return result;
-        }
+        
+   return org==n;     
     }
 };
