@@ -1,31 +1,20 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        int length = 0;
-              int i = s.length() - 1;
+        int i = s.size() - 1;
+        int len = 0;
 
-         
+        // skip trailing spaces
         while (i >= 0 && s[i] == ' ') {
             i--;
-
         }
 
-
-
-
-
-
-
-
-
-
-
-                       while (i >= 0 && s[i] != ' ') {
-            length++;
+        // count last word length
+        while (i >= 0 && s[i] != ' ') {
+            len++;
             i--;
-            ;
         }
 
-              return length;
+        return len;
     }
 };
