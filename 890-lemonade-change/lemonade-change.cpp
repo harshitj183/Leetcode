@@ -3,31 +3,38 @@ public:
     bool lemonadeChange(vector<int>& bills) {
 
         int five = 0;
-        int ten = 0;
+        int tenth = 0;
 
-        for (int i : bills) {
+        for(int i = 0; i < bills.size(); i++) {
 
-            if (i == 5) {
+            if(bills[i] == 5) {
                 five++;
-            } 
-            else if (i == 10) {
-                if (five == 0) return false;
+            }
+
+            else if(bills[i] == 10) {
+
+                if(five == 0)
+                    return false;
+
                 five--;
-                ten++;
-            } 
-            else { 
-                if (ten > 0 && five > 0) {
-                    ten--;
+                tenth++;
+            }
+
+            else { // bills[i] == 20
+
+                if(tenth > 0 && five > 0) {
+                    tenth--;
                     five--;
-                } 
-                else if (five >= 3) {
+                }
+                else if(five >= 3) {
                     five -= 3;
-                } 
+                }
                 else {
                     return false;
                 }
             }
         }
+
         return true;
     }
 };
