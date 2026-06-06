@@ -1,5 +1,3 @@
- // for std::swap
-
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -14,16 +12,14 @@
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        if (root == nullptr) return root;
-        
-        changekarbhai(root->left, root->right);
-        return root;
-    }
 
-private: 
-    void changekarbhai(TreeNode*& left, TreeNode*& right) {
-        swap(left, right);               
-        if (left)  changekarbhai(left->left,  left->right);
-        if (right) changekarbhai(right->left, right->right);
+if (root  ==  nullptr) return root ;
+
+   swap(root->left,root->right);
+
+invertTree(root->left);
+invertTree(root->right);
+
+return root;
     }
 };
