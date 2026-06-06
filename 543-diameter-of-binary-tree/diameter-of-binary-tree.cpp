@@ -9,27 +9,23 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
 class Solution {
 public:
-    int diameterOfBinaryTree(TreeNode* root) {
-        int diameter = 0;
-        height(root, diameter);
-        return diameter;
+
+    int solve(TreeNode* root) {
+        if(root == nullptr) return 0;
+
+        return 1 + max(solve(root->left), solve(root->right));
     }
 
-private:
-    // returns height (in nodes) of subtree rooted at node
-    int height(TreeNode* node, int &diameter) {
-        if (!node) return 0;
+    int diameterOfBinaryTree(TreeNode* root) {
+        if(root == nullptr) return 0;
 
-        int leftHeight = height(node->left, diameter);
-        int rightHeight = height(node->right, diameter);
+        int op1 = solve(root->left) + solve(root->right);  
+        int op2 = diameterOfBinaryTree(root->left);   
 
-        // candidate diameter passing through this node (in edges)
-        diameter = max(diameter, leftHeight + rightHeight);
+        int op3 = diameterOfBinaryTree(root->right);  
 
-        // height of current node (in nodes)
-        return 1 + max(leftHeight, rightHeight);
+        return max(op1, max(op2, op3));
     }
 };
