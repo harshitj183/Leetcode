@@ -11,7 +11,7 @@ public:
                     if (isalpha(s[j]) && s[j] != '*') {
 
                         s[j] = '*';
-                    
+
                         break;
                     }
                 }
