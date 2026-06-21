@@ -1,1 +1,1 @@
-<h2>increasing-order-search-tree Notes</h2><hr>[ Time taken: 8hrs 40m 10s ]
+<h2>increasing-order-search-tree Notes</h2><hr>[ Time taken: 6hrs 17m 37s ]
