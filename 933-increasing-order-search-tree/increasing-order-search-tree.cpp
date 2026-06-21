@@ -1,7 +1,7 @@
 class Solution {
 public:
-    
-    TreeNode* prev;
+      TreeNode* dummy = new TreeNode(0);
+    TreeNode* prev = dummy;
     
     void inorder(TreeNode* root) {
         if (root == nullptr) {
@@ -19,8 +19,7 @@ public:
 
     TreeNode* increasingBST(TreeNode* root) {
         
-        TreeNode* dummy = new TreeNode(0);
-        prev = dummy;
+      
 
         inorder(root);
 
