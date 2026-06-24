@@ -1,53 +1,33 @@
 class Solution {
 public:
+    void solve(vector<vector<int>>& image, int sr, int sc,
+               int oldColor, int newColor) {
 
-void solve(vector<vector<int>>& image,
-           int sr,
-           int sc,
-           int oldColor,
-           int color){
- 
-    if (sr < 0){
-        return;
+        if (sr < 0 || sc < 0 ||
+            sr >= image.size() || sc >= image[0].size())
+            return;
+
+        if (image[sr][sc] != oldColor)
+            return;
+
+        image[sr][sc] = newColor;
+
+        solve(image, sr + 1, sc, oldColor, newColor);
+        solve(image, sr - 1, sc, oldColor, newColor);
+        solve(image, sr, sc + 1, oldColor, newColor);
+        solve(image, sr, sc - 1, oldColor, newColor);
     }
 
-    if (sc < 0){
-        return;
-    }
+    vector<vector<int>> floodFill(vector<vector<int>>& image,
+                                  int sr, int sc, int color) {
 
-    if (sr > image.size()-1){
-        return;
-    }
+        int oldColor = image[sr][sc];
 
-    if (sc > image[0].size()-1){
-        return;
-    }
- 
-    if (image[sr][sc] != oldColor){
-        return;
-    }
- 
-    image[sr][sc] = color;
- 
-    solve(image,sr+1,sc,oldColor,color);
-    solve(image,sr,sc+1,oldColor,color);
-    solve(image,sr-1,sc,oldColor,color);
-    solve(image,sr,sc-1,oldColor,color);
-}
+        if (oldColor == color)
+            return image;
 
-vector<vector<int>> floodFill(vector<vector<int>>& image,
-                              int sr,
-                              int sc,
-                              int color) {
+        solve(image, sr, sc, oldColor, color);
 
-    int oldColor = image[sr][sc];
- 
-    if (oldColor == color){
         return image;
     }
-
-    solve(image,sr,sc,oldColor,color);
-
-    return image;
-}
 };
