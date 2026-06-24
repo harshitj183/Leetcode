@@ -3,8 +3,8 @@ public:
     void solve(vector<vector<int>>& image, int sr, int sc,
                int oldColor, int newColor) {
 
-        if (sr < 0 || sc < 0 ||
-            sr >= image.size() || sc >= image[0].size())
+        if (sr == -1 || sc == -1 ||
+            sr == image.size() || sc == image[0].size())
             return;
 
         if (image[sr][sc] != oldColor)
