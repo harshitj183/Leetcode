@@ -3,107 +3,57 @@ public:
 
 
 
-void dfs(vector<vector<int>>& grid, int row ,int col ,int & res){
+void solve(vector<vector<int>>& grid, int i ,int j, int &are){
 
-     
-        if (row < 0 || col < 0 ||
-            row >= grid.size() || col >= grid[0].size() ||
-            grid[row][col] !=  1) {
-            return;
-        }
+if(i <0 || j <0|| i >= grid.size() || j >= grid[0].size() || grid[i][j]== 0)
+{
+    
+    return;
+    
+    }
 
-grid[row][col] = 4;
-res++;
+ grid[i][j]=0;
 
+solve(grid,i+1,j,are);
+solve(grid,i,j+1,are);
+solve(grid,i,j-1,are);
+solve(grid,i-1,j,are);
+are++;
 
-
-
-        dfs(grid, row - 1, col,res);
-        dfs(grid, row + 1, col,res);
-        dfs(grid, row, col - 1,res);
-        dfs(grid, row, col + 1,res);
-
-
-
-   
 
 }
+
+
+
+
     int maxAreaOfIsland(vector<vector<int>>& grid) {
-
-     
-
-
-int ult = 0;
-    
-
-        for (int i = 0; i < grid.size(); i++) {
-
-            for (int j = 0; j < grid[0].size(); j++) {
-                    int res = 0;
-
-                if (grid[i][j] == 1) {
-
-                     dfs(grid, i, j,res);
+        
 
 
-                     ult = max(res,ult);
-                }
+int maxval =0; 
+
+
+        for(int i =0 ; i < grid.size();i++){
+
+
+            for(int j =0 ; j<grid[0].size();j++){
+
+if(grid[i][j] == 1){
+         int are =0;
+
+         solve(grid,i,j,are);
+
+       maxval=  max(maxval,are);
+          
+}
             }
         }
 
-        return ult;
+
+
+
+
+return maxval; 
+
     }
 };
-
-
-// class Solution {
-// public:
-
-// void dfs(vector<vector<int>>& grid,
-//          int row,
-//          int col,
-//          int &res){
-
-//     // boundary + invalid check
-//     if (row < 0 || col < 0 ||
-//         row >= grid.size() ||
-//         col >= grid[0].size() ||
-//         grid[row][col] != 1) {
-//         return;
-//     }
-
-//     // mark visited
-//     grid[row][col] = 4;
-
-//     // increase area
-//     res++;
-
-//     // 4 directions
-//     dfs(grid, row - 1, col, res);
-//     dfs(grid, row + 1, col, res);
-//     dfs(grid, row, col - 1, res);
-//     dfs(grid, row, col + 1, res);
-// }
-
-// int maxAreaOfIsland(vector<vector<int>>& grid) {
-
-//     int ult = 0;
-
-//     for (int i = 0; i < grid.size(); i++) {
-
-//         for (int j = 0; j < grid[0].size(); j++) {
-
-//             int res = 0;
-
-//             if (grid[i][j] == 1) {
-
-//                 dfs(grid, i, j, res);
-
-//                 ult = max(res, ult);
-//             }
-//         }
-//     }
-
-//     return ult;
-// }
-// };
