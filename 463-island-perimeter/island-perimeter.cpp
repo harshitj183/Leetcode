@@ -2,30 +2,24 @@ class Solution {
 public:
     int islandPerimeter(vector<vector<int>>& grid) {
 
-        int res = 0;
+        int islands = 0;
+        int neighbors = 0;
 
-        for (int i = 0; i < grid.size(); i++) {
+        for(int i = 0; i < grid.size(); i++) {
+            for(int j = 0; j < grid[0].size(); j++) {
 
-            for (int j = 0; j < grid[0].size(); j++) {
+                if(grid[i][j] == 1) {
+                    islands++;
 
-                if (grid[i][j] == 1) {
+                    if(i > 0 && grid[i-1][j] == 1)
+                        neighbors++;
 
-                    // current cell contributes 4 sides
-                    res += 4;
-
-                    // upper neighbour
-                    if (i > 0 && grid[i - 1][j] == 1) {
-                        res -= 2;
-                    }
-
-                    // left neighbour
-                    if (j > 0 && grid[i][j - 1] == 1) {
-                        res -= 2;
-                    }
+                    if(j > 0 && grid[i][j-1] == 1)
+                        neighbors++;
                 }
             }
         }
 
-        return res;
+        return islands * 4 - neighbors * 2;
     }
 };
