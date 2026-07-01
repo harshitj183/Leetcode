@@ -1,74 +1,55 @@
 class Solution {
 public:
 
-    void solve(vector<vector<int>>& grid, queue<pair<int,int>>& q, int &fresh) {
+    void dfs(vector<vector<int>>& grid, vector<vector<int>>& time,
+             int i, int j, int t) {
 
-        int row[] = {-1, 1, 0, 0};
-        int col[] = {0, 0, -1, 1};
+        if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size())
+            return;
 
-        int sz = q.size();
+        if (grid[i][j] == 0)
+            return;
 
-        while (sz--) {
+        if (t >= time[i][j])
+            return;
 
-            auto it = q.front();
-            q.pop();
+        time[i][j] = t;
 
-            int x = it.first;
-            int y = it.second;
-
-            for (int k = 0; k < 4; k++) {
-
-                int nx = x + row[k];
-                int ny = y + col[k];
-
-                if (nx >= 0 && ny >= 0 &&
-                    nx < grid.size() &&
-                    ny < grid[0].size() &&
-                    grid[nx][ny] == 1) {
-
-                    grid[nx][ny] = 2;
-                    fresh--;
-                    q.push({nx, ny});
-                }
-            }
-        }
+        dfs(grid, time, i + 1, j, t + 1);
+        dfs(grid, time, i - 1, j, t + 1);
+        dfs(grid, time, i, j + 1, t + 1);
+        dfs(grid, time, i, j - 1, t + 1);
     }
 
     int orangesRotting(vector<vector<int>>& grid) {
 
-        queue<pair<int,int>> q;
+        int m = grid.size();
+        int n = grid[0].size();
 
-        int fresh = 0;
+        vector<vector<int>> time(m, vector<int>(n, INT_MAX));
 
-        for (int i = 0; i < grid.size(); i++) {
-            for (int j = 0; j < grid[0].size(); j++) {
-
+         
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 2)
-                    q.push({i, j});
-
-                else if (grid[i][j] == 1)
-                    fresh++;
+                    dfs(grid, time, i, j, 0);
             }
         }
 
-        if (fresh == 0)
-            return 0;
+        int ans = 0;
 
-        int count = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
 
-        while (!q.empty() && fresh > 0) {
+                if (grid[i][j] == 1) {
+                    if (time[i][j] == INT_MAX)
+                        return -1;
 
-            solve(grid, q, fresh);
-            count++;
+                    ans = max(ans, time[i][j]);
+                }
+            }
         }
 
-        if (fresh > 0)
-            return -1;
-
-        return count;
+        return ans;
     }
 };
-
-
-
-
