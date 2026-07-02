@@ -4,11 +4,10 @@ public:
     void dfs(vector<vector<int>>& grid, vector<vector<int>>& time,
              int i, int j, int t) {
 
-        if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size())
+        if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size()|| grid[i][j] == 0)
             return;
 
-        if (grid[i][j] == 0)
-            return;
+    
 
         if (t >= time[i][j])
             return;
