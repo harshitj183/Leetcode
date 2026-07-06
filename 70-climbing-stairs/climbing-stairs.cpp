@@ -1,19 +1,18 @@
 class Solution {
 public:
-    int climbStairs(int n) {
 
+vector<int>dp = vector<int>(46,-1);
+    int climbStairs(int n) {
         if (n <= 2)
             return n;
 
-        int prev2 = 1;
-        int prev1 = 2;
 
-        for (int i = 3; i <= n; i++) {
-            int curr = prev1 + prev2;
-            prev2 = prev1;
-            prev1 = curr;
-        }
+            if(dp[n] != -1){
 
-        return prev1;
-    }
+               return dp[n];
+
+            };
+
+        return  dp[n] = climbStairs(n - 1) + climbStairs(n - 2);
+    };
 };
