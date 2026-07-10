@@ -14,7 +14,7 @@ public:
 
         if (original == nullptr)
             return nullptr;
-
+       
         if (original == target)
             return cloned;
 
@@ -22,7 +22,11 @@ public:
 
         if (right != nullptr)
             return right;
+       TreeNode* left =  getTargetCopy(original->left, cloned->left, target);
 
-        return getTargetCopy(original->left, cloned->left, target);
+      if (left != nullptr)
+            return left;
+
+  return nullptr ;
     }
 };
