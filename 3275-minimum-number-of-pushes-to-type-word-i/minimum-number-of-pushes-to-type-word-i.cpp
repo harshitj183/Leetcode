@@ -19,13 +19,13 @@ int res =0 ;
 // 3  8  + 8 ( *2 ) 8 *3
 
 
-int rem = sz % 8;
-int n = sz/8;
-int temo =  8 *( (n *(n+1))/2);
+ 
+ 
+ 
 
-res += rem * ((sz/8) +1);
+res += (sz % 8) * ((sz/8) +1) + (8 *( ((sz/8) *((sz/8)+1))/2));
 
-res += temo;
+ 
 
 return res;
 
