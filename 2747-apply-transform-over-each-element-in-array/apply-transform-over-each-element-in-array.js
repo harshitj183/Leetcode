@@ -3,17 +3,10 @@
  * @param {Function} fn
  * @return {number[]}
  */
-var map = function (arr, fn) {
-    let res = [];
-let pls;
-    for (let i in arr){
-
-pls = fn(arr[+(i)],+(i));
-
-
-res.push(pls);
-    }
-
- return res;
-    
+var map = function(arr, fn) {
+  var mappedArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    mappedArray.push(fn(arr[i], i));
+  }
+  return mappedArray;
 };
