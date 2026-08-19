@@ -4,10 +4,7 @@ public:
                int oldColor, int newColor) {
 
         if (sr == -1 || sc == -1 ||
-            sr == image.size() || sc == image[0].size())
-            return;
-
-        if (image[sr][sc] != oldColor)
+            sr == image.size() || sc == image[0].size() || image[sr][sc] != oldColor)
             return;
 
         image[sr][sc] = newColor;
