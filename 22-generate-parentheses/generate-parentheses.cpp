@@ -35,7 +35,7 @@ public:
 
         curr.push_back(')');
         solve(curr, m);
-        curr.pop_back();
+   
     }
 
     vector<string> generateParenthesis(int n) {
