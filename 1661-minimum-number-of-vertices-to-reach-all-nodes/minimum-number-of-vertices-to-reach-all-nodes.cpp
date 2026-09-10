@@ -1,23 +1,27 @@
 class Solution {
 public:
-    vector<int> findSmallestSetOfVertices(int n, vector<vector<int>>& edges) {
-        set<int> st;
+    vector<int> findSmallestSetOfVertices(
+        int n,
+        vector<vector<int>>& edges) {
 
-        for (int i = 0; i < n; i++) {
-            st.insert(i);
-        }
-        for (auto a : edges) {
-            if (st.find(a[1]) != st.end()) {
+        vector<int> indegree(n, 0);
 
-                st.erase(a[1]);
-            }
+        // Count incoming edges
+        for(auto edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+
+            indegree[v]++;
         }
 
         vector<int> res;
 
-        for (auto s : st) {
+        // Nodes having no incoming edge
+        for(int i = 0; i < n; i++) {
 
-            res.push_back(s);
+            if(indegree[i] == 0) {
+                res.push_back(i);
+            }
         }
 
         return res;
