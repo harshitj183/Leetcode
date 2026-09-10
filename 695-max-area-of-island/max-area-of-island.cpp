@@ -13,12 +13,12 @@ if(i <0 || j <0|| i >= grid.size() || j >= grid[0].size() || grid[i][j]== 0)
     }
 
  grid[i][j]=0;
-
+are++;
 solve(grid,i+1,j,are);
 solve(grid,i,j+1,are);
 solve(grid,i,j-1,are);
 solve(grid,i-1,j,are);
-are++;
+
 
 
 }
