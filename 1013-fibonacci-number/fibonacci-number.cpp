@@ -1,6 +1,6 @@
-vector<int>dp(31, -1);
+ 
 class Solution {
-    // vector<int> dp = vector<int>(31, -1);
+    vector<int> dp = vector<int>(31, -1);
 public:
     
     int fib(int n) {
