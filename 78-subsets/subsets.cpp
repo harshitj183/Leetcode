@@ -1,22 +1,22 @@
-class Solution {
 
+class Solution {
 public:
 
-    void solve(vector<int>& nums,
-               vector<int>& temp,
-               int idx,
+    void solve(vector<int>& nums, int idx, vector<int> temp,
                vector<vector<int>>& res) {
 
-        res.push_back(temp);
-
-        for (int i = idx; i < nums.size(); i++) {
-
-            temp.push_back(nums[i]);
-
-            solve(nums, temp, i + 1, res);
-
-            temp.pop_back();
+        if(idx >= nums.size()) {
+            res.push_back(temp);
+            return;
         }
+
+        // Include
+        temp.push_back(nums[idx]);
+        solve(nums, idx + 1, temp, res);
+
+        // Exclude
+        temp.pop_back();
+        solve(nums, idx + 1, temp, res);
     }
 
     vector<vector<int>> subsets(vector<int>& nums) {
@@ -24,7 +24,7 @@ public:
         vector<vector<int>> res;
         vector<int> temp;
 
-        solve(nums, temp, 0, res);
+        solve(nums, 0, temp, res);
 
         return res;
     }
